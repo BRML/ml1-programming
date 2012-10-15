@@ -87,6 +87,9 @@ def train_test_val_split(X, Z, train_frac, val_frac, test_frac):
 
 
 def plot_decision_boundary(ax, predict, x_extent, y_extent):
+    """Plot the decision boundary of a classification decision function
+    `predict` to axis ax. The pairs `x_extent` and `y_extent` give the
+    (min, max) values of the plot."""
     h = 0.04
     x_min, x_max = x_extent
     y_min, y_max = y_extent
