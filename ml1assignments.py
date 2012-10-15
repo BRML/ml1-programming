@@ -62,3 +62,23 @@ def knn(X, z, k):
         # TODO: Do a majority vote and return the class as an integer.
 
     return predict
+
+
+def train_test_val_split(X, Z, train_frac, val_frac, test_frac):
+    """Split the data into three sub data sets, one for training, one for
+    validation and one for testing. The data is shuffled first."""
+    assert train_frac + val_frac + test_frac == 1, "fractions don't sum up to 1"
+
+    n_samples = X.shape[0]
+    n_samples_train = int(math.floor(n_samples * train_frac))
+    n_samples_val = int(math.floor(n_samples * val_frac))
+
+    idxs = range(n_samples)
+    random.shuffle(idxs)
+    train_idxs = idxs[:n_samples_train]
+    val_idxs = idxs[n_samples_train:n_samples_train + n_samples_val]
+    test_idxs = idxs[n_samples_train + n_samples_val:]
+
+    return (X[train_idxs], Z[train_idxs],
+            X[val_idxs], Z[val_idxs],
+            X[test_idxs], Z[test_idxs])
