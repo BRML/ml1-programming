@@ -33,12 +33,11 @@ if __name__ == '__main__':
             best_predict = predict
             best_error = error
 
+    # Plot the decision boundary of the best predictor.
     x_extent = X[:, 0].min() - .2, X[:, 0].max() + .2
     y_extent = X[:, 1].min() - .2, X[:, 1].max() + .2
-
     fig = plt.figure()
     ax = fig.add_subplot(111)
     plot_decision_boundary(ax, best_predict, x_extent, y_extent)
     ax.scatter(TX[:, 0], TX[:, 1], c=tz, s=50)
-
     plt.show()
