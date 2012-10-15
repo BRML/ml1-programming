@@ -2,6 +2,8 @@
 
 __author__ = "Justin Bayer, bayer.justin@googlemail.com"
 
+import math
+import random
 
 import numpy as np
 import pylab
@@ -82,3 +84,16 @@ def train_test_val_split(X, Z, train_frac, val_frac, test_frac):
     return (X[train_idxs], Z[train_idxs],
             X[val_idxs], Z[val_idxs],
             X[test_idxs], Z[test_idxs])
+
+
+def plot_decision_boundary(ax, predict, x_extent, y_extent):
+    h = 0.04
+    x_min, x_max = x_extent
+    y_min, y_max = y_extent
+
+    xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
+    Z = predict(np.c_[xx.ravel(), yy.ravel()])
+
+    # Put the result into a color plot
+    Z = Z.reshape(xx.shape)
+    ax.pcolormesh(xx, yy, Z, alpha=.5)
