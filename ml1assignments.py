@@ -39,3 +39,26 @@ def iris_data(fn):
         z[i] = label_to_idx[label]
 
     return X, z
+
+
+def knn(X, z, k):
+    """Return a function to do k nearest neighbour prediction.
+
+    The function returned will do a majority vote among the k nearest
+    neighbours.
+
+    :param X: An (n, d) sized array holding n data items of dimensionality d.
+    :param z: An n sized vector holding integers that indicate the class of the
+        corresponding item in X. Integers start at 0 and end at c-1, where c is
+        the number of classes.
+    :param k: Number of neighbours to use.
+    """
+    def predict(x):
+        # TODO: Calculate the distance of x to every point in the training set
+        # X.
+
+        # TODO: Pick the k points with the lowest distance.
+
+        # TODO: Do a majority vote and return the class as an integer.
+
+    return predict
