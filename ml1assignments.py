@@ -6,7 +6,6 @@ import math
 import random
 
 import numpy as np
-import pylab
 
 
 def iris_data(fn):
@@ -62,6 +61,7 @@ def knn(X, z, k):
         # TODO: Pick the k points with the lowest distance.
 
         # TODO: Do a majority vote and return the class as an integer.
+        pass
 
     return predict
 
@@ -100,3 +100,9 @@ def plot_decision_boundary(ax, predict, x_extent, y_extent):
     # Put the result into a color plot
     Z = Z.reshape(xx.shape)
     ax.pcolormesh(xx, yy, Z, alpha=.5)
+
+
+def zero_one_loss(truth, predictions):
+    """Return the fraction of values where truth and prediction agree."""
+    # TODO Return the fraction of correct answers.ko
+    pass
