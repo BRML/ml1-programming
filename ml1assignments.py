@@ -103,6 +103,6 @@ def plot_decision_boundary(ax, predict, x_extent, y_extent):
 
 
 def zero_one_loss(truth, predictions):
-    """Return the fraction of values where truth and prediction agree."""
+    """Return the fraction of values where truth and prediction do not agree."""
     # TODO Return the fraction of correct answers.ko
     pass
