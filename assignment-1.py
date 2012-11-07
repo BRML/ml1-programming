@@ -1,7 +1,4 @@
 import warnings
-import sklearn.neighbors.base
-warnings.filterwarnings('ignore',
-                        category=sklearn.neighbors.base.NeighborsWarning)
 
 import matplotlib.pyplot as plt
 
